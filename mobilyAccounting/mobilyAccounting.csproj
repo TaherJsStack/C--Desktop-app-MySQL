@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{704A1A94-4D4E-4078-8DCB-9AEC99C38B58}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mobilyAccounting</RootNamespace>
+    <AssemblyName>mobilyAccounting</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2056FF0D6BD68097249BA3939384068D67135CC4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>mobilyAccounting_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\mysql-connector-net-6.1.2-noinstall\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.visualstudio">
+      <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-6.1.2-noinstall\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\CLS_ACOUNT_CASH_INFO.cs" />
+    <Compile Include="BL\CLS_ACOUNT_RECEIPT_INFO.cs" />
+    <Compile Include="BL\CLS_ACOUNT_RECEIPT_ITEMS.cs" />
+    <Compile Include="BL\CLS_CATEGORY.cs" />
+    <Compile Include="BL\CLS_CLIENS_ACCOUNT.cs" />
+    <Compile Include="BL\CLS_LOGIN.cs" />
+    <Compile Include="BL\CLS_PRODUCTS.cs" />
+    <Compile Include="BL\CLS_RECEIPT.cs" />
+    <Compile Include="BL\CLS_RECEIPT_ACOUNT.cs" />
+    <Compile Include="BL\CLS_RECEIPT_INFO.cs" />
+    <Compile Include="BL\CLS_RECEIPT_ITEMS.cs" />
+    <Compile Include="BL\CLS_REPAIRING.cs" />
+    <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="PL\ADD_ACCOUNT_CASH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\ADD_ACCOUNT_CASH.Designer.cs">
+      <DependentUpon>ADD_ACCOUNT_CASH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ADD_ACCOUNT_RECEIPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\ADD_ACCOUNT_RECEIPT.Designer.cs">
+      <DependentUpon>ADD_ACCOUNT_RECEIPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ADD_CATEGORY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\ADD_CATEGORY.Designer.cs">
+      <DependentUpon>ADD_CATEGORY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ADD_CLIENT_ACCOUNT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\ADD_CLIENT_ACCOUNT.Designer.cs">
+      <DependentUpon>ADD_CLIENT_ACCOUNT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ADD_DEVICE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\ADD_DEVICE.Designer.cs">
+      <DependentUpon>ADD_DEVICE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ADD_PRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\ADD_PRODUCT.Designer.cs">
+      <DependentUpon>ADD_PRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DASHBOARD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DASHBOARD.Designer.cs">
+      <DependentUpon>DASHBOARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\DASHBOARD_WORKER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\DASHBOARD_WORKER.Designer.cs">
+      <DependentUpon>DASHBOARD_WORKER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\RECEIPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\RECEIPT.Designer.cs">
+      <DependentUpon>RECEIPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SHOW_ACC_CASH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SHOW_ACC_CASH.Designer.cs">
+      <DependentUpon>SHOW_ACC_CASH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SHOW_ACC_RECE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SHOW_ACC_RECE.Designer.cs">
+      <DependentUpon>SHOW_ACC_RECE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SHOW_ACC_RECE_ITMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SHOW_ACC_RECE_ITMS.Designer.cs">
+      <DependentUpon>SHOW_ACC_RECE_ITMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SHOW_DEVICE_REPAIRING.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SHOW_DEVICE_REPAIRING.Designer.cs">
+      <DependentUpon>SHOW_DEVICE_REPAIRING.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\SHOW_ITEMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\SHOW_ITEMS.Designer.cs">
+      <DependentUpon>SHOW_ITEMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPT\crv_RECEIPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crv_RECEIPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\dsProducts.cs">
+      <DependentUpon>dsProducts.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\dsProducts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProducts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\REPORT_VIEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\REPORT_VIEW.Designer.cs">
+      <DependentUpon>REPORT_VIEW.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PL\ADD_ACCOUNT_CASH.resx">
+      <DependentUpon>ADD_ACCOUNT_CASH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ADD_ACCOUNT_RECEIPT.resx">
+      <DependentUpon>ADD_ACCOUNT_RECEIPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ADD_CATEGORY.resx">
+      <DependentUpon>ADD_CATEGORY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ADD_CLIENT_ACCOUNT.resx">
+      <DependentUpon>ADD_CLIENT_ACCOUNT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ADD_DEVICE.resx">
+      <DependentUpon>ADD_DEVICE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ADD_PRODUCT.resx">
+      <DependentUpon>ADD_PRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DASHBOARD.resx">
+      <DependentUpon>DASHBOARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\DASHBOARD_WORKER.resx">
+      <DependentUpon>DASHBOARD_WORKER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\RECEIPT.resx">
+      <DependentUpon>RECEIPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SHOW_ACC_CASH.resx">
+      <DependentUpon>SHOW_ACC_CASH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SHOW_ACC_RECE.resx">
+      <DependentUpon>SHOW_ACC_RECE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SHOW_ACC_RECE_ITMS.resx">
+      <DependentUpon>SHOW_ACC_RECE_ITMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SHOW_DEVICE_REPAIRING.resx">
+      <DependentUpon>SHOW_DEVICE_REPAIRING.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\SHOW_ITEMS.resx">
+      <DependentUpon>SHOW_ITEMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RPT\crv_RECEIPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crv_RECEIPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\REPORT_VIEW.resx">
+      <DependentUpon>REPORT_VIEW.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="mobilyAccounting_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\mobilyAccounting.BL.CLS_CLIENS_ACCOUNT.datasource" />
+    <None Include="Properties\DataSources\mobilyAccounting.BL.CLS_RECEIPT.datasource" />
+    <None Include="Properties\DataSources\mobilyAccounting.BL.CLS_RECEIPT_ACOUNT.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RPT\dsProducts.xsc">
+      <DependentUpon>dsProducts.xsd</DependentUpon>
+    </None>
+    <None Include="RPT\dsProducts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProducts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RPT\dsProducts.xss">
+      <DependentUpon>dsProducts.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EnvDTE">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EnvDTE80">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.OLE.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MySql.Data">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MySql.VisualStudio">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
